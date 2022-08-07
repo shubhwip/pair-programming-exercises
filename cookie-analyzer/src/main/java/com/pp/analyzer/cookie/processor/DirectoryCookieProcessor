@@ -1,0 +1,52 @@
+package com.quantcast.analyzer.cookie.processor;
+
+import LoadFile;
+import DateFilter;
+import Filter;
+import MostActiveCookieFilter;
+import CookieData;
+import CookieResult;
+import IParser;
+import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+
+import java.io.File;
+import java.util.List;
+import java.util.NoSuchElementException;
+
+@AllArgsConstructor
+@Slf4j
+public class DirectoryCookieParser implements Processor {
+
+    private String date;
+    private String fileLocation;
+    private IParser cookieParser;
+    private LoadFile loadFile;
+
+    @Override
+    public List<CookieResult> applyFilters() {
+        // Go through all the files
+        List<CookieData> cookiesData = new ArrayList<>();
+        File dir = new File(fileLocation);
+        File[] directoryListing = dir.listFiles();
+        // Run file processing in parallel
+        // What if file is not local and it is held on s3 bucket
+        // What is you are given a directory and get all the files and apply Most Active Cookie Filter
+        if (directoryListing != null) {
+            for (File child : directoryListing) {
+                String fileName = loadFile.loadFile(fileLocation);
+                cookiesData.addAll(cookieParser.parse(fileName).map(cookieData -> cookieData)
+                        .orElseThrow(NoSuchElementException::new));
+
+            }
+        } else {
+            log.error("FileLocation {} is not directory", fileLocation);
+        }
+        Filter filter = new DateFilter(date);
+        filter = new MostActiveCookieFilter(filter);
+        return filter.applyFilter(cookiesData);
+        // Map <FileName, List<CookieResult>
+
+    }
+}
+

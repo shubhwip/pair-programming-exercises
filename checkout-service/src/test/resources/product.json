@@ -1,0 +1,17 @@
+[
+  {
+    "productCode": 1,
+    "productName": "Travel Card Holder",
+    "productPrice" : 9.25
+  },
+  {
+    "productCode": 2,
+    "productName": "Personalised cufflinks",
+    "productPrice" : 45
+  },
+  {
+    "productCode": 3,
+    "productName": "Kids T-shirt",
+    "productPrice" : 19.95
+  }
+]

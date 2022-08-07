@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.pp</groupId>
+    <artifactId>pair-programming-exercises</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.0.3.RELEASE</version>
+        <relativePath /> <!-- lookup parent from repository -->
+    </parent>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>17</source>
+                    <target>17</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <properties>
+        <maven.compiler.source>18</maven.compiler.source>
+        <maven.compiler.target>18</maven.compiler.target>
+    </properties>
+
+    <modules>
+        <module>elevator</module>
+        <module>tic-tac-toe</module>
+        <module>url-shortener</module>
+        <module>rate-limiter</module>
+        <module>currency-converter</module>
+        <module>cache-manager</module>
+        <module>blackjack-game</module>
+        <module>splitwise-cli</module>
+        <module>wordgame</module>
+        <module>checkout-service</module>
+        <module>tollplaza</module>
+        <module>dynamic-filtering</module>
+        <module>simple-bank</module>
+        <module>cookie-analyzer</module>
+        <module>transaction</module>
+        <module>lending-service</module>
+        <module>booking-application</module>
+        <module>refactoring-exercise-1</module>
+        <module>refactoring-exercise-1-implementation</module>
+    </modules>
+
+</project>
+
