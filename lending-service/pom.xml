@@ -16,7 +16,7 @@
     </properties>
 
     <groupId>com.zopa</groupId>
-    <artifactId>zopa-lending-service</artifactId>
+    <artifactId>lending-service</artifactId>
     <version>1.0</version>
 
     <build>

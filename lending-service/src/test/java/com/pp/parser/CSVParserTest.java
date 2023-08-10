@@ -10,6 +10,7 @@ import org.junit.jupiter.api.Test;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 /**
  * CSVParserTest covers test coverage of Parsing CSVFiles only
@@ -37,7 +38,7 @@ public class CSVParserTest {
                 // Act
                 List<Lender> lenders = parser.getLenders(k);
                 // Assert
-                Assertions.assertEquals(v, lenders.size());
+                Assertions.assertEquals(Optional.ofNullable(v), lenders.size());
             } catch (InputFileParseException e) {
                 e.printStackTrace();
             }

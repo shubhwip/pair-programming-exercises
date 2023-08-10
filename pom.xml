@@ -55,6 +55,7 @@
         <module>refactoring-exercise-1</module>
         <module>refactoring-exercise-1-implementation</module>
         <module>cricketsimulation</module>
+        <module>hotel-search</module>
     </modules>
 
 </project>

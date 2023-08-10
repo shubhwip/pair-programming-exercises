@@ -10,6 +10,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
@@ -112,7 +113,7 @@ class DefaultWordGameMultiThreadedTests {
         Assertions.assertEquals("player380", wordGame.getPlayerNameAtPosition(0));
         Assertions.assertEquals("player13", wordGame.getPlayerNameAtPosition(1));
 
-        Assertions.assertEquals(5, wordGame.getScoreAtPosition(2));
+        Assertions.assertEquals(5, Optional.ofNullable(wordGame.getScoreAtPosition(2)));
         Assertions.assertEquals("zithernzithernsz", wordGame.getWordEntryAtPosition(0));
     }
 }
