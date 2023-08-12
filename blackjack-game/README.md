@@ -6,17 +6,17 @@ Popular BlackJack Game is designed in Object-Oriented Fashion.
 
 - We can have a common object for player and dealer and define an member variable as a role which will
 differentiate between the player and the dealer.
-Pros : Simpler and more consistent
-Cons : It will increase time complexity in the system as at many places we need to put a check if a player
-is a dealer.
+  - Pros : Simpler and more consistent
+  - Cons : It will increase time complexity in the system as at many places we need to put a check if a player
+  is a dealer.
 
-- Create a Objects Diagram
+- Create UML Objects Diagram
 
-- Write Tests Tomorrow
+- Write Tests
 
-- Factory Pattern, Dependency Injection Pattern.
+- Design Patterns : Factory Pattern, Dependency Injection Pattern.
 
-- Dealer Operations are fixed so automate it.
+- Dealer Operations are fixed so we can automate it.
 
 - Game is run in one pass.
 

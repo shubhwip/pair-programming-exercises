@@ -28,6 +28,8 @@ public class FlexibleSizeDeck implements Deck {
         isShuffled = false;
     }
 
+    // Todo : Use Strategy Pattern and Inject Shuffle Implementation
+    // Todo : to call different types of shuffle implementations
     public void shuffleDeck() {
         // This part is hardcoded dependency
         // Use DI here

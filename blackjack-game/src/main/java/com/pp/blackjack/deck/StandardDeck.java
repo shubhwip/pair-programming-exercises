@@ -8,6 +8,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 @Getter
+// Todo : Some common implementation in StandardDeck and FlexibleSizeDeck
+// Todo: can we create Abstract class ?
 public final class StandardDeck implements Deck {
     private List<Card> deck;
     private boolean isShuffled;

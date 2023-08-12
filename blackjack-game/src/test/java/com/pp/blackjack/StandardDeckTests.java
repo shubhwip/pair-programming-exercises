@@ -1,5 +1,6 @@
 package com.pp.blackjack;
 
+import com.pp.blackjack.deck.Deck;
 import com.pp.blackjack.model.Card;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
