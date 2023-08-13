@@ -56,6 +56,8 @@
         <module>refactoring-exercise-1-implementation</module>
         <module>cricketsimulation</module>
         <module>hotel-search</module>
+        <module>graph-library</module>
+        <module>vehicle-rental</module>
     </modules>
 
 </project>

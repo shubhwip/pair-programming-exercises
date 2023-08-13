@@ -9,5 +9,5 @@ public interface Graph {
 
     void addEdge(Integer a, Integer b);
 
-    Integer getVertices();
+    Integer getSourceVertices();
 }
