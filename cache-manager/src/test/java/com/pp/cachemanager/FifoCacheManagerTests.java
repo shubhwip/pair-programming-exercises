@@ -9,6 +9,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
+import java.util.Optional;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -45,7 +46,7 @@ public class FifoCacheManagerTests {
         cacheManager.put(8);
         // Then
         assertEquals(7, cacheManager.get().size());
-        assertEquals(2, cacheManager.get().get(0));
+        assertEquals(2, Optional.ofNullable(cacheManager.get().get(0)));
     }
 
     @Test

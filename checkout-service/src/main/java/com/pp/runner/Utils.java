@@ -8,6 +8,7 @@ import com.pp.product.Repository;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.BufferedReader;
+import java.io.FileInputStream;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.math.BigDecimal;
@@ -23,7 +24,8 @@ public class Utils {
         }
         Repository<Product> productRepository = new ProductRepository();
         // Learn more at https://stackoverflow.com/questions/26675048/classloader-getresource-doesnt-work-in-jar-file/26675158
-        try (InputStream stream = getClass().getClassLoader().getResourceAsStream(filename)) {
+        // This saved me : https://stackoverflow.com/questions/56382404/classloader-getresource-returning-null-while-using-file-getabsolutepath
+        try (InputStream stream = new FileInputStream(filename)) {
             String result = new BufferedReader(new InputStreamReader(stream))
                     .lines().collect(Collectors.joining("\n"));
             Gson gson = new Gson();

@@ -9,6 +9,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
+import java.util.Optional;
 import java.util.Random;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
@@ -32,7 +33,7 @@ public class LfuCacheManagerTests {
         cacheManager.put(3);
         // Then
         assertEquals(3, cacheManager.get().size());
-        assertEquals(1, cacheManager.get().get(0));
+        assertEquals(1, Optional.ofNullable(cacheManager.get().get(0)));
     }
 
     @Test
@@ -48,7 +49,7 @@ public class LfuCacheManagerTests {
         cacheManager.put(8);
         // Then
         assertEquals(3, cacheManager.get().size());
-        assertEquals(6, cacheManager.get().get(0));
+        assertEquals(6, Optional.ofNullable(cacheManager.get().get(0)));
     }
 
     @Test
@@ -57,7 +58,7 @@ public class LfuCacheManagerTests {
         cacheManager.put(6);
         // Then
         assertEquals(3, cacheManager.get().size());
-        assertEquals(2, cacheManager.get().get(0));
+        assertEquals(2, Optional.ofNullable(cacheManager.get().get(0)));
     }
 
     @Test

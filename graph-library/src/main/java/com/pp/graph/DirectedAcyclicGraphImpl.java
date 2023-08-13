@@ -65,7 +65,7 @@ public class DirectedAcyclicGraphImpl extends DirectedAcyclicGraph {
     }
 
     @Override
-    public Integer getVertices() {
+    public Integer getSourceVertices() {
         return graph.size();
     }
 

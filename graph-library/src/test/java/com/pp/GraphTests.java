@@ -24,7 +24,7 @@ class GraphTests {
     @Test
     void givenAnEdge_whenAddEdgeIsCalled_thenEdgeShouldBeAdded() {
         graph.addEdge(1, 2);
-        Assertions.assertEquals(1, (int)graph.getVertices());
+        Assertions.assertEquals(1, (int)graph.getSourceVertices());
     }
 
     @Test
@@ -32,7 +32,7 @@ class GraphTests {
         graph.addEdge(1, 2);
         graph.addEdge(2, 3);
         graph.addEdge(3, 1);
-        Assertions.assertEquals(2, (int)graph.getVertices());
+        Assertions.assertEquals(2, (int)graph.getSourceVertices());
     }
 
     // Traversal

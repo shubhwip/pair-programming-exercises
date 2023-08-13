@@ -30,8 +30,8 @@
     </build>
 
     <properties>
-        <maven.compiler.source>18</maven.compiler.source>
-        <maven.compiler.target>18</maven.compiler.target>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
     </properties>
 
     <modules>
@@ -49,7 +49,7 @@
         <module>dynamic-filtering</module>
         <module>simple-bank</module>
         <module>cookie-analyzer</module>
-        <module>transaction</module>
+<!--        <module>transaction</module>-->
         <module>lending-service</module>
         <module>booking-application</module>
         <module>refactoring-exercise-1</module>
