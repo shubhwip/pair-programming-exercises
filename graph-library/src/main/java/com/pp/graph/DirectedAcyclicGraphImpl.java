@@ -3,13 +3,12 @@ package com.pp.graph;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 @Slf4j
 public class DirectedAcyclicGraphImpl extends DirectedAcyclicGraph {
 
-    // If graph can't contain self loops then Set would be a great data structure.
-    // Is it weighted or non weighted graph
-    Map<Integer, List<Integer>> graph;
+    private final Map<Integer, List<Integer>> graph;
 
     public DirectedAcyclicGraphImpl() {
         graph = new HashMap<>();
@@ -17,32 +16,50 @@ public class DirectedAcyclicGraphImpl extends DirectedAcyclicGraph {
 
     @Override
     public List<Integer> dfs() {
+        Set<Integer> visited = new HashSet<>();
         Stack<Integer> stack = new Stack<>();
-        List<Integer> dfsTravesal = new ArrayList<>();
-        Map.Entry<Integer, List<Integer>> startNode = graph.entrySet().iterator().next();
-        stack.push(startNode.getKey());
-        while(!stack.isEmpty()) {
-            Integer element = stack.pop();
-            dfsTravesal.add(element);
-            if(graph.get(element) != null)
-                graph.get(element).stream().forEach(a -> stack.push(a));
-        }
-        return dfsTravesal;
+        return graph.keySet()
+                .stream()
+                .filter(k -> !visited.contains(k))
+                .map(key-> {
+                    stack.push(key);
+                    while(!stack.isEmpty()) {
+                        Integer element = stack.pop();
+                        if(!visited.contains(element)) {
+                            visited.add(element);
+                            if (graph.get(element) != null)
+                                graph.get(element).stream().forEach(a -> stack.push(a));
+                        }
+                    }
+                     return visited;
+                })
+                .flatMap(a -> a.stream())
+                .distinct()
+                .collect(Collectors.toList());
     }
 
     @Override
     public List<Integer> bfs() {
+        Set<Integer> visited = new HashSet<>();
         Queue<Integer> queue = new LinkedList<>();
-        List<Integer> bfsTravesal = new ArrayList<>();
-        Map.Entry<Integer, List<Integer>> startNode = graph.entrySet().iterator().next();
-        queue.add(startNode.getKey());
-        while(!queue.isEmpty()) {
-            Integer element = queue.remove();
-            bfsTravesal.add(element);
-            if(graph.get(element) != null)
-                graph.get(element).stream().forEach(a -> queue.add(a));
-        }
-        return bfsTravesal;
+        return graph.keySet()
+                .stream()
+                .filter(k -> !visited.contains(k))
+                .map(key-> {
+                    queue.add(key);
+                    while(!queue.isEmpty()) {
+                        Integer element = queue.remove();
+                        if(!visited.contains(element)) {
+                            visited.add(element);
+                            if (graph.get(element) != null)
+                                graph.get(element).stream().forEach(a -> queue.add(a));
+                        }
+                    }
+                    return visited;
+                })
+                .flatMap(a -> a.stream())
+                .distinct()
+                .collect(Collectors.toList());
     }
 
     @Override

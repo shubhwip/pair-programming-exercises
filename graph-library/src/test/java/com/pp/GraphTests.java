@@ -44,12 +44,52 @@ class GraphTests {
         Assertions.assertEquals(Arrays.asList(1,3,2,4), graph.dfs());
     }
 
+    @Test
+    void givenAGraphWithConnectedComponents_whenDFSTraversalIsCalled_thenReturnsDFSTraversal() {
+        graph.addEdge(1, 2);
+        graph.addEdge(2, 4);
+        graph.addEdge(1, 3);
+        graph.addEdge(5, 6);
+        graph.addEdge(6,7);
+        Assertions.assertEquals(Arrays.asList(1,2,3,4,5,6,7), graph.dfs());
+    }
+
+    @Test
+    void givenAGraphWithMultipleVertices_whenDFSTraversalIsCalled_thenReturnsDFSTraversal() {
+        graph.addEdge(1, 2);
+        graph.addEdge(1, 4);
+        graph.addEdge(1, 3);
+        graph.addEdge(2, 4);
+        graph.addEdge(4,3);
+        Assertions.assertEquals(Arrays.asList(1,2,3,4), graph.dfs());
+    }
+
     // Traversal
     @Test
     void givenAGraph_whenBFSTraversalIsCalled_thenReturnsBFSTraversal() {
         graph.addEdge(1, 2);
         graph.addEdge(2, 4);
         graph.addEdge(1, 3);
+        Assertions.assertEquals(Arrays.asList(1,2,3,4), graph.bfs());
+    }
+
+    @Test
+    void givenAGraphWithConnectedComponents_whenBFSTraversalIsCalled_thenReturnsDFSTraversal() {
+        graph.addEdge(1, 2);
+        graph.addEdge(2, 4);
+        graph.addEdge(1, 3);
+        graph.addEdge(5, 6);
+        graph.addEdge(6,7);
+        Assertions.assertEquals(Arrays.asList(1,2,3,4,5,6,7), graph.bfs());
+    }
+
+    @Test
+    void givenAGraphWithMultipleVertices_whenBFSTraversalIsCalled_thenReturnsDFSTraversal() {
+        graph.addEdge(1, 2);
+        graph.addEdge(1, 4);
+        graph.addEdge(1, 3);
+        graph.addEdge(2, 4);
+        graph.addEdge(4,3);
         Assertions.assertEquals(Arrays.asList(1,2,3,4), graph.bfs());
     }
 

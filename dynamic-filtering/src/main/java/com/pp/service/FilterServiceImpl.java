@@ -1,4 +1,4 @@
-package com.filtering.service;
+package com.pp.service;
 
 import com.filtering.model.Product;
 
