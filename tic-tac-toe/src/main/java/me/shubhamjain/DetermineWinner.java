@@ -9,8 +9,20 @@ public class DetermineWinner {
             return Optional.of(new GameResult(GameResultType.WIN, 'X'));
         else if(checkRowsAndColumns(board, 'O') || checkDiagonals(board, 'O'))
             return Optional.of(new GameResult(GameResultType.WIN, 'O'));
+        else if(allPositionsOccupied(board))
+            return Optional.of(new GameResult(GameResultType.TIE, 'N'));
         else
             return Optional.empty();
+    }
+
+    private boolean allPositionsOccupied(char[][] board) {
+        for(char[] b : board) {
+            for(char a : b) {
+                if(a == 0)
+                    return false;
+            }
+        }
+        return true;
     }
 
     private boolean checkRowsAndColumns(char[][] board, char playerId) {
