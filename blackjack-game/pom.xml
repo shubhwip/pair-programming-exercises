@@ -32,7 +32,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.pp.blackjack.Runner</mainClass>
+                            <mainClass>me.shubhamjain.blackjack.Runner</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>

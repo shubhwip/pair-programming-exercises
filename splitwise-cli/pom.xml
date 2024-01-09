@@ -34,7 +34,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.pp.splitwise.runner.Main</mainClass>
+                            <mainClass>me.shubhamjain.splitwise.runner.Main</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>

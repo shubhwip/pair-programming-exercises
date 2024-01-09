@@ -1,6 +1,6 @@
 package com.filtering;
 
-import com.filtering.model.Product;
+import me.shubhamjain.model.Product;
 import com.filtering.service.FilterService;
 import com.filtering.service.FilterServiceImpl;
 import org.junit.jupiter.api.Assertions;

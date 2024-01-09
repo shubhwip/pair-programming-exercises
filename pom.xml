@@ -58,6 +58,10 @@
         <module>hotel-search</module>
         <module>graph-library</module>
         <module>vehicle-rental</module>
+        <module>smelly-tic-tac-toe</module>
+        <module>javafx-2048</module>
+        <module>generic-stack-implementation</module>
+        <module>google-cloud-storage-pagination</module>
     </modules>
 
 </project>
