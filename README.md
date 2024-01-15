@@ -5,7 +5,7 @@ Many of these problems have been asked in interview rounds.
 
 ## Structure
 Each Subproject has a README.md file which details out the problem statement. There are few refactoring exercises as well with names starting from refactoring-exercise-*.
-Now there is a solution available in each of the subproject and it is written in java and related frameworks.
+Now there is a solution available in each of the subproject and it is written in java and related frameworks. keep in mind that it is not the best solution.
 
 ## How to approach ?
 - Read the Problem statment
@@ -17,12 +17,12 @@ Now there is a solution available in each of the subproject and it is written in
 - Start the implementation
 - Refactor and repeat
 
-## What happens aftermath ?
+## What happens afterwards ?
 Now once your timer has stopped and you're done with something real in your hand. Go ahead and ask yourself below questions
 - How far this solution is away from production grade ?
 - Given more time, what could be done for better ?
 - Did you overengineer your solution by any chance ?
-- Were your intial assumptions wrong ?
+- Were your initial assumptions wrong ?
 Keep in mind that there is nothing like best solution, you make some tradeoffs while designing a solution 
 and nobody is expecting production grade solution in 1 or 2 hours. It is just a matter of convesation and driving discussion
 around important parts of your solution and all choices you made.
