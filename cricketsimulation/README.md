@@ -1,5 +1,8 @@
 # CricketSimulation
-CricketSimulation will be used to simulate the cricket match, ball by ball. The match simulation will require weighted random number generation based on probability to determine the runs scored per ball.
+CricketSimulation will be used to simulate the cricket match, ball by ball. 
+The match simulation will require weighted random number generation based on probability to determine the runs scored per ball.
+
+[Problem Statment](cricket-simulation.pdf)
 
 ### Prerequisites
 - Java 8, Maven

@@ -1,6 +1,8 @@
 # BlackJack Game
-
 Popular BlackJack Game is designed in Object-Oriented Fashion.
+
+## Basic Requirements
+https://www.wikihow.com/Play-Blackjack
 
 ## IMPORTANT DESIGN DECISIONS
 
